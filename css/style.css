@@ -1,83 +1,180 @@
-body {
+body, p {
   margin: 0;
-  body: 0; }
+  padding: 0;
+  font-family: Helvetica, Arial, sans-serif; }
+
+h1, h2, h3, h4 {
+  font-weight: normal; }
+
+img {
+  width: 100%; }
+
+a {
+  text-decoration: none;
+  color: #00a7e9; }
+
+a:hover {
+  color: #00709d; }
+
+.headerSmall {
+  display: none; }
 
 .nav {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  border: 1px solid red;
-  justify-content: space-between; }
+  justify-content: space-between;
+  height: 40px;
+  padding: 0 30px 0 30px; }
   .nav .webpages {
     display: flex;
     flex-direction: row;
-    border: 1px solid red;
+    align-items: center;
     width: 400px; }
     .nav .webpages a {
       width: 14.2857142857%;
-      text-align: center; }
+      text-align: center;
+      margin: 0 10px; }
 
 .searchbar {
   background-color: black;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center; }
+  align-items: center;
+  height: 80px;
+  border-bottom: 5px solid #00a7e9; }
   .searchbar .products {
     display: flex;
     flex-direction: row;
     align-items: center; }
+  .searchbar img {
+    width: 40px;
+    height: 40px;
+    padding: 0 60px 0 35px; }
+  .searchbar a:hover {
+    color: #fff; }
+
+.account {
+  display: flex;
+  align-items: center; }
+  .account .fas {
+    background-color: #00a7e9;
+    color: #fff;
+    padding: 12px;
+    margin-left: 8px; }
+
+#selected {
+  background-color: #000;
+  color: #fff;
+  padding: 10% 10px 10% 10px;
+  margin-left: 0; }
+
+a#selected:hover {
+  color: #fff; }
+
+.search input {
+  border: none;
+  background-color: #fff;
+  height: 36px;
+  width: 440px;
+  border-radius: 6px; }
+.search .fas {
+  position: relative;
+  font-size: 1.5rem;
+  right: 36px;
+  top: 4px; }
 
 .main {
   width: 1300px;
-  margin: 0 auto 0 auto;
-  border: 1px solid #00f; }
+  margin: 20px auto 0 auto; }
+
+.slide {
+  margin: 0; }
+  .slide img {
+    width: 100%; }
+  .slide .bannerLabel {
+    margin-top: -4px;
+    background-color: #333333;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    padding-left: 20px; }
+    .slide .bannerLabel a {
+      padding-left: 10px; }
 
 .product-display {
   display: flex;
   align-content: space-between;
   justify-content: space-between;
-  border: 12px solid green; }
+  margin-top: 20px; }
   .product-display .featured {
-    width: 50%;
-    border: 1px solid #00f; }
-    .product-display .featured .product {
-      height: 50%; }
+    width: 50%; }
 
 .smallcolumn {
   width: 50%;
+  margin-left: 20px;
   display: flex;
   flex-direction: row; }
 
 .new, .guide {
   width: 50%; }
-  .new .product, .guide .product {
-    height: 33.3333333333%; }
+
+.guide {
+  margin-left: 20px; }
 
 .product {
-  border: 1px solid #f0f; }
+  margin-bottom: 10px;
+  position: relative; }
+  .product .label {
+    z-index: 100;
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    width: 96%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding-left: 2%;
+    padding-right: 2%; }
 
-.bottom .contents {
-  width: 1300px;
-  display: flex;
-  justify-content: space-between;
-  height: 468px;
-  margin: 0 auto 0 auto; }
+.bottom {
+  background-color: #000;
+  margin-top: 40px; }
+  .bottom .contents {
+    width: 1300px;
+    display: flex;
+    justify-content: space-between;
+    height: 468px;
+    margin: 0 auto 0 auto; }
+  .bottom p {
+    color: #fff; }
 
 .utility {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 1px solid red; }
+  width: 50%; }
+
+.extra {
+  width: 50%; }
 
 .links {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  justify-content: space-around;
+  height: 400px;
+  font-size: 14px; }
+  .links a {
+    text-transform: uppercase; }
 
-.search .fas {
-  position: relative;
-  right: 22px;
-  top: 2px; }
+.quote p {
+  font-style: italic;
+  font-size: 30px;
+  line-height: 150%; }
+.quote .author {
+  color: #00a7e9;
+  font-style: normal; }
 
 @media screen and (max-width: 1365px) {
   .main {
@@ -91,13 +188,15 @@ body {
     .product-display .featured {
       display: flex;
       flex-direction: row;
-      width: 100%; }
+      width: 100%;
+      justify-content: space-between; }
       .product-display .featured .product {
-        width: 50%;
+        width: 49%;
         height: 100%; }
 
   .smallcolumn {
-    width: 100%; }
+    width: 100%;
+    margin: 0; }
 
   .bottom .contents {
     width: 1000px;
@@ -115,7 +214,23 @@ body {
     display: flex;
     justify-content: space-between;
     height: 468px;
-    margin: 0 auto 0 auto; } }
+    margin: 0 auto 0 auto; }
+
+  .smallcolumn {
+    margin: 0; }
+
+  .product-display {
+    display: flex;
+    flex-direction: column;
+    width: 100%; }
+    .product-display .featured {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-between; }
+      .product-display .featured .product {
+        width: 48.6%;
+        height: 100%; } }
 @media screen and (max-width: 767px) {
   .main {
     margin: 0 auto 0 auto;
@@ -137,6 +252,8 @@ body {
     width: 100%;
     display: flex;
     flex-flow: column nowrap; }
+    .smallcolumn .guide, .smallcolumn .new {
+      margin: 0; }
 
   .new, .guide {
     width: 100%; }
@@ -146,13 +263,32 @@ body {
     display: flex;
     justify-content: space-between;
     height: 468px;
-    margin: 0 auto 0 auto; } }
+    margin: 0 auto 0 auto; }
+
+  .slide, .header, .extra {
+    display: none; }
+
+  .headerSmall {
+    height: 60px;
+    background-color: #000;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8px 0 8px; }
+    .headerSmall .fas {
+      color: #fff;
+      font-size: 34px; }
+    .headerSmall img {
+      width: 50px;
+      height: 50px; } }
 @media screen and (max-width: 710px) {
   .main {
     margin: 0 auto 0 auto;
     width: 90%; }
 
-  .extra {
-    display: none; } }
+  .smallcolumn .guide, .smallcolumn .new {
+    margin: 0; } }
 
 /*# sourceMappingURL=style.css.map */
